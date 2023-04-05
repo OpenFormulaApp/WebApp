@@ -37,13 +37,35 @@ jQueryScript.onload = () => {
         }
         return data;
       }
+    function showModal(informacion){
+      let modal = $("<div>").addClass("modal fade");
+
+      modal.html(`
+        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+            <div class="modal-content">
+                <div class="modal-header">
+                  <h4 class="modal-title">Más información</h4>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+                </div>
+                <div class="modal-body">
+                    ${informacion}
+                </div>
+            </div>
+        </div>
+      `);
+      modal.appendTo("body").modal("show");
+    }
       let table = new DataTable("#formulas", {
         ajax: {
           url: remoteJSON,
           dataSrc: "",
         },
         columns: [
-          { data: "nombre" },
+          { data: "nombre", createdCell: function (td, cellData, rowData, row, col){
+            $(td).on("click", function(){
+              showModal(rowData.informacion)
+            })
+          } },
           { data: "formula", orderable: false, render: renderKatex },
         ],
         fuzzySearch: true,
