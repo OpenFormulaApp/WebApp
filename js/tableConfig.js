@@ -68,6 +68,12 @@ jQueryScript.onload = () => {
           } },
           { data: "formula", orderable: false, render: renderKatex },
         ],
+        columnDefs:[
+          {
+            targets: 1,
+            className: 'dt-center'
+          }
+        ],
         fuzzySearch: true,
         order: [[0, "des"]],
         language: {
