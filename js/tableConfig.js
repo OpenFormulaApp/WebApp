@@ -38,7 +38,22 @@ jQueryScript.onload = () => {
         return data;
       }
     function showModal(informacion){
-      let modal = $("<div>").addClass("modal fade").attr("tabindex","-1");
+      informacion = informacion.replace(/(?<!\$)\n(?!.*?\$)/g, "<br>");
+
+      informacion = informacion.replace(/\$\$(.*?)\$\$/g, function(match,p1){
+        try{
+          return katex.renderToString(p1,{
+            throwOnError: false,
+            displayMode: false,
+            fontSize: 14,
+          });
+        } catch (error){
+          console.error(error);
+          return match;
+        }
+      });
+
+      let modal = $("<div>").addClass("modal fade").attr("tabindex", "-1");
 
       modal.html(`
         <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
@@ -53,7 +68,9 @@ jQueryScript.onload = () => {
             </div>
         </div>
       `);
-      modal.appendTo("body").modal("show");
+      
+      $('body').append(modal);
+      modal.modal('show');
     }
       let table = new DataTable("#formulas", {
         ajax: {
