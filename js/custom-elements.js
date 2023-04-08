@@ -50,4 +50,31 @@ window.addEventListener('load',() =>{
     }
   }
   customElements.define('of-footer',Footer);
+
+  class breadcrumb extends HTMLElement{
+    constructor(){
+      super();
+    }
+
+    connectedCallback(){
+      let rutaActual = window.location.pathname.split("/");
+      //rutaActual = rutaActual.shift();
+      let ultimoElemento = rutaActual.pop();
+      ultimoElemento = ultimoElemento.charAt(0).toUpperCase() + ultimoElemento.slice(1).slice(0,-5);
+      this.ruta = rutaActual.filter((ruta) => ruta !== '');
+
+      let html = '<nav aria-label="breadcrumb"><ol class="breadcrumb">';
+      html += '<li class="breadcrumb-item"><a href="/">Inicio</a></li>';
+
+      this.ruta.forEach((ruta) => {
+        html += `<li class="breadcrumb-item"><a href="/${ruta}">${ruta}</a></li>`;
+      });
+
+      html += `<li class="breadcrumb-item active" aria-current="page">${ultimoElemento}</li>`;
+      html += '</ol></nav>';
+
+      this.innerHTML = html;
+    }
+  }
+  customElements.define('of-breadcrumb',breadcrumb);
 })
