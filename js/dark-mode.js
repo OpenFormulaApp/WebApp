@@ -15,4 +15,18 @@ function toggleDM() {
     document.documentElement.setAttribute("data-bs-theme", "dark");
     localStorage.setItem("theme", "dark");
   }
+  changeIcon();
+}
+
+function changeIcon() {
+  let darkIcon = document.getElementById("darkIcon");
+  let lightIcon = document.getElementById("lightIcon");
+
+  if (document.documentElement.getAttribute("data-bs-theme") === "dark") {
+    darkIcon.style.display = "inline-block";
+    lightIcon.style.display = "none";
+  } else {
+    darkIcon.style.display = "none";
+    lightIcon.style.display = "inline-block";
+  }
 }
