@@ -33,6 +33,7 @@ window.addEventListener("load", () => {
           this.innerHTML = data;
           this.addActiveClass = addActiveClass.bind(this);
           this.addActiveClass();
+          changeIcon();
         });
     }
   }
