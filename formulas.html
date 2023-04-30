@@ -5,26 +5,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>OpenFormula</title>
+    <link rel="icon" type="image/x-icon" href="/imgs/favicon.ico" />
+    <script src="js/dark-mode.js"></script>
     <script src="js/custom-elements.js"></script>
   </head>
   <body>
     <of-navbar></of-navbar>
-    <of-breadcrumb></of-breadcrumb>
-    <div class="container-fluid">
-      <table id="formulas" class="table">
-        <thead>
-          <tr>
-            <th>Nombre</th>
-            <th>Fórmula</th>
-          </tr>
-        </thead>
-        <tbody></tbody>
-      </table>
-    </div>
-    <script>
-      const remoteJSON =
-        "https://raw.githubusercontent.com/OpenFormulaApp/OpenFormulaDBs/main/math.json";
-    </script>
-    <script src="js/tableConfig.js"></script>
+    <of-footer></of-footer>
   </body>
 </html>
