@@ -27,7 +27,7 @@ window.addEventListener("load", () => {
       super();
     }
     connectedCallback() {
-      fetch("templates/navbar.html")
+      fetch("/templates/navbar.html")
         .then((response) => response.text())
         .then((data) => {
           this.innerHTML = data;
@@ -45,7 +45,7 @@ window.addEventListener("load", () => {
       super();
     }
     connectedCallback() {
-      fetch("templates/footer.html")
+      fetch("/templates/footer.html")
         .then((response) => response.text())
         .then((data) => {
           this.innerHTML = data;
