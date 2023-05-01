@@ -70,7 +70,7 @@ window.addEventListener("load", () => {
 
       let html = '<nav aria-label="breadcrumb"><ol class="breadcrumb">';
       html +=
-        '<li class="breadcrumb-item"><a href="formulas.html">Fórmulas</a></li>';
+        '<li class="breadcrumb-item"><a href="/formulas.html">Fórmulas</a></li>';
 
       this.ruta.forEach((ruta) => {
         html += `<li class="breadcrumb-item"><a href="/${ruta}">${ruta}</a></li>`;
