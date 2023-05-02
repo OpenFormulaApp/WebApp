@@ -47,6 +47,7 @@ jQueryScript.onload = () => {
     }
 
     let table = new DataTable("#formulas", {
+      paging: paginacion,
       ajax: {
         url: remoteJSON,
         dataSrc: "",
