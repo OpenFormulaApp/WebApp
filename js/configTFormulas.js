@@ -1,9 +1,3 @@
-const bootstrapStyle = document.createElement("link");
-bootstrapStyle.rel = "stylesheet";
-bootstrapStyle.href =
-  "https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css";
-document.head.appendChild(bootstrapStyle);
-
 const katexStyle = document.createElement("link");
 katexStyle.rel = "stylesheet";
 katexStyle.href =
@@ -24,11 +18,6 @@ jQueryScript.onload = () => {
   dataTablesScript.src =
     "https://cdn.datatables.net/v/bs5/dt-1.13.4/sb-1.4.2/sp-2.1.2/datatables.min.js";
   dataTablesScript.onload = () => {
-    const bootstrapScript = document.createElement("script");
-    bootstrapScript.src =
-      "https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js";
-    document.body.appendChild(bootstrapScript);
-
     const dataTablesSearch = document.createElement("script");
     dataTablesSearch.src =
       "https://cdn.datatables.net/plug-ins/1.13.4/features/fuzzySearch/dataTables.fuzzySearch.js";
