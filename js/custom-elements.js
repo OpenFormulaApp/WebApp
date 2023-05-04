@@ -27,7 +27,7 @@ window.addEventListener("load", () => {
       super();
     }
     connectedCallback() {
-      fetch("templates/navbar.html")
+      fetch("/templates/navbar.html")
         .then((response) => response.text())
         .then((data) => {
           this.innerHTML = data;
@@ -45,7 +45,7 @@ window.addEventListener("load", () => {
       super();
     }
     connectedCallback() {
-      fetch("templates/footer.html")
+      fetch("/templates/footer.html")
         .then((response) => response.text())
         .then((data) => {
           this.innerHTML = data;
@@ -68,9 +68,9 @@ window.addEventListener("load", () => {
         ultimoElemento.slice(1).slice(0, -5);
       this.ruta = rutaActual.filter((ruta) => ruta !== "");
 
-      let html =
-        '<nav aria-label="breadcrumb" style="background-color: rgb(64,64,64);" data-bs-theme="dark"><ol class="breadcrumb">';
-      html += '<li class="breadcrumb-item"><a href="/">Inicio</a></li>';
+      let html = '<nav aria-label="breadcrumb"><ol class="breadcrumb">';
+      html +=
+        '<li class="breadcrumb-item"><a href="/formulas.html">Fórmulas</a></li>';
 
       this.ruta.forEach((ruta) => {
         html += `<li class="breadcrumb-item"><a href="/${ruta}">${ruta}</a></li>`;

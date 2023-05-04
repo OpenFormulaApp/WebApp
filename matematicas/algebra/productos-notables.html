@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>OpenFormula</title>
+    <link rel="icon" type="image/x-icon" href="/imgs/favicon.ico" />
+    <script src="/js/dark-mode.js"></script>
+    <script src="/js/custom-elements.js"></script>
+  </head>
+  <body>
+    <of-navbar></of-navbar>
+    <div class="container-fluid">
+      <table class="table" id="formulas">
+        <thead>
+          <tr>
+            <th>Nombre</th>
+            <th>Fórmula</th>
+          </tr>
+        </thead>
+      </table>
+    </div>
+    <script>
+      const remoteJSON =
+        "https://raw.githubusercontent.com/OpenFormulaApp/OpenFormulaDBs/main/Algebra/productos-notables.json";
+      const paginacion = false;
+    </script>
+    <script src="/js/configTablaGenerica.js"></script>
+  </body>
+</html>
